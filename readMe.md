@@ -5,7 +5,7 @@ This repo is about a demo of backend application using DDD (Domain Driven Design
 ## Structure
 the structure of the project is as follows:
 
-```css
+```
 src/
 ├── domain/
 │   ├── entities/
