@@ -1,7 +1,6 @@
 import mongoose, { Document, Schema } from "mongoose";
-import { Fruit } from "../../../../domain/entities/Fruit";
 
-interface FruitBaseDocument extends Document {
+export interface FruitBaseDocument extends Document {
   name: string;
   description: string;
   limit: number;

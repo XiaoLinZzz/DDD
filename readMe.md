@@ -2,6 +2,12 @@
 
 This repo is about a demo of backend application using DDD (Domain Driven Design) approach.
 
+## To-do list
+- [ ] Set up a new Node.js project with TypeScript, Mongoose, Jest, and Nexus.
+- [ ] Configure linters, precommit hooks, and other development tools.
+
+
+
 ## Structure
 the structure of the project is as follows:
 

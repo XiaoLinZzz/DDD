@@ -1,15 +1,15 @@
 export class Description {
-    private readonly value: string;
-  
-    constructor(value: string) {
-      if (value.length > 10) {
-        throw new Error('Description cannot be longer than 10 characters');
-      }
-      this.value = value;
+  private readonly value: string;
+
+  constructor(value: string) {
+    if (!value) {
+      throw new Error("Description cannot be empty");
     }
-  
-    get(): string {
-      return this.value;
-    }
+    this.value = value;
+  }
+
+  getValue(): string {
+    return this.value;
+  }
+
 }
-  

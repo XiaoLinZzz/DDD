@@ -1,29 +1,27 @@
 import { Fruit } from "../../domain/entities/Fruit";
 import { Description } from "../../domain/valueObjects/Description";
-import { FruitModel } from "../database/mongoose/models/FruitModel";
+import { FruitBaseDocument, FruitModel } from "../database/mongoose/models/FruitModel";
 
 export class FruitMapper {
-  static toPersistence(fruit: Fruit): FruitModel {
-    return new FruitModel({
+  public static toDomain(fruitDocument: FruitBaseDocument): Fruit {
+    return new Fruit({
+      _id: fruitDocument._id,
+      name: fruitDocument.name,
+      description: new Description(fruitDocument.description),
+      limit: fruitDocument.limit,
+      amount: fruitDocument.amount,
+    });
+  }
+
+  public static toPersistence(fruit: Fruit): FruitBaseDocument {
+    const fruitDoc = new FruitModel({
       _id: fruit.id,
       name: fruit.name,
       description: fruit.description.value,
       limit: fruit.limit,
       amount: fruit.amount,
     });
-  }
 
-  static toDomain(rawFruit: FruitModel): Fruit {
-    const description = Description.create(rawFruit.description);
-    return Fruit.create(
-      {
-        id: rawFruit._id,
-        name: rawFruit.name,
-        description: description.getValue(),
-        limit: rawFruit.limit,
-        amount: rawFruit.amount,
-      },
-      rawFruit._id
-    );
+    return fruitDoc;
   }
 }

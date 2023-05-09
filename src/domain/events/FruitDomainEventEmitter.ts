@@ -1,12 +1,12 @@
 import { EventEmitter } from "events";
 import { Fruit } from "../entities/Fruit";
 
-export class FruitDomainEventEmitter extends EventEmitter {}
+class FruitDomainEventEmitter extends EventEmitter {}
 
-const fruitDomainEventEmitter = new FruitDomainEventEmitter();
+const fruitEventEmitter = new FruitDomainEventEmitter();
 
-fruitDomainEventEmitter.on("fruitCreated", (fruit: Fruit) => {
-  console.log("Fruit created:", fruit);
+fruitEventEmitter.on("fruitCreated", (fruit: Fruit) => {
+  console.log(`A new fruit has been created: ${fruit.name}`);
 });
 
-export { fruitDomainEventEmitter };
+export { fruitEventEmitter };

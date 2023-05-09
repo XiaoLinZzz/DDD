@@ -1,9 +1,9 @@
 import { Fruit } from "../entities/Fruit";
-import { Description } from "../valueObjects/Description";
+import { v4 as uuidv4 } from "uuid";
 
 export class FruitFactory {
-  static create(id: string, name: string, description: string, limit: number, amount: number): Fruit {
-    const fruitDescription = new Description(description);
-    return new Fruit(id, name, fruitDescription, limit, amount);
+  create(name: string, description: string, limit: number): Fruit {
+    const id = uuidv4();
+    return new Fruit(id, name, description, limit);
   }
 }
