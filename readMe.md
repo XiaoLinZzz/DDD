@@ -1,4 +1,6 @@
-# DDD
+# Fruit Storage System Demo
+
+This repo is about a demo of backend application using DDD (Domain Driven Design) approach.
 
 ## Structure
 the structure of the project is as follows:
