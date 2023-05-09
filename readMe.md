@@ -5,6 +5,20 @@ This repo is about a demo of backend application using DDD (Domain Driven Design
 ## To-do list
 - [ ] Set up a new Node.js project with TypeScript, Mongoose, Jest, and Nexus.
 - [ ] Configure linters, precommit hooks, and other development tools.
+- [ ] Design the project folder structure following Domain Driven Design principles.
+- [ ] Create the Fruit domain model, including Value Objects for name and description.
+- [ ] Implement a Fruit Factory to create new Fruit instances.
+- [ ] Implement a Fruit Repository to manage storage and retrieval of fruits.
+- [ ] Implement mappers to convert between database objects and domain objects.
+- [ ] Develop Domain Services to handle unique fruit name checks and other business logic.
+- [ ] Set up the GraphQL schema generation using Nexus.
+- [ ] Implement the GraphQL mutations and queries with appropriate input validation.
+- [ ] Create a mechanism to emit domain events with guaranteed at least once delivery.
+- [ ] Write acceptance tests for the mutations and query as described in the task.
+- [ ] Implement any additional unit or integration tests to ensure code quality.
+- [ ] Review the code and optimize for readability, maintainability, and performance.
+- [ ] Document any assumptions made, decisions taken, and the project setup.
+
 
 
 
