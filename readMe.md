@@ -53,3 +53,9 @@ src/
 
 ### Why this structure?
 This structure helps to maintain a **clean** architecture, where the domain layer is separated from external concerns, like data access and APIs. This makes the code **more maintainable**, **testable**, and **easier to understand**, as each part of the system has a clearly defined purpose.
+
+
+## Code Quality
+The code quality is maintained using the following tools:
+1. [ESLint](https://eslint.org/): A tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.
+2. [Prettier](https://prettier.io/): An opinionated code formatter.
