@@ -11,7 +11,10 @@ export class FruitStorageService {
     ) {}
 
     async createFruit(name: string, description: string, limit: number): Promise<Fruit> {
-        await this.uniqueFruitNameService.isUnique(name);
+        const isUnique = await this.uniqueFruitNameService.isUnique(name);
+        if (!isUnique) {
+            throw new Error('Fruit name already exists');
+        }
         const fruit = this.fruitFactory.create(name, description, limit);
         await this.fruitRepository.save(fruit);
         return fruit;

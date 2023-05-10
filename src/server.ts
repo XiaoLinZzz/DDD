@@ -20,13 +20,13 @@ mongoose
 
     const server = new ApolloServer({
       schema,
-      context: {
+      context: () => ({
         fruitStorageService: new FruitStorageService(
           fruitRepository,
           uniqueFruitNameService,
           fruitFactory
         ),
-      },
+      }),
     });
 
     server.listen().then(({ url }) => {

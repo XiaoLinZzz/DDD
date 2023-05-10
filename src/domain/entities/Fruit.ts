@@ -27,9 +27,9 @@ export class Fruit {
     }
 
     store(amount: number): void {
-      // if (this.amount + amount > this.limit) {
-      //   throw new Error("Exceeds limit");
-      // }
+      if (this.amount + amount > this.limit) {
+        throw new Error("Exceeds limit");
+      }
       this.amount += amount;
     }
 

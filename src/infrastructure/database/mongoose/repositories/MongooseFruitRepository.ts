@@ -23,8 +23,13 @@ export class MongooseFruitRepository implements FruitRepository {
   }
 
   async save(fruit: Fruit): Promise<void> {
-    const fruitModel = FruitMapper.toPersistence(fruit);
-    await fruitModel.save();
+    const { id, name, description, limit, amount } = FruitMapper.toPersistence(fruit);
+
+    await FruitModel.findByIdAndUpdate(
+      { _id: id },
+      { name, description, limit, amount },
+      { new: true, upsert: true }
+    );
   }
 
   async delete(id: string): Promise<void> {
