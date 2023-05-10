@@ -7,6 +7,11 @@ export const findFruit = queryField('findFruit', {
     },
     resolve: async (_, { name }, ctx) => {
         const fruit = await ctx.fruitStorageService.findFruit(name)
+
+        if (!fruit) {
+            throw new Error('Fruit not found')
+        }
+
         return {
             id: fruit.id,
             name: fruit.name,
