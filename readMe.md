@@ -62,7 +62,6 @@ npm install apollo-server graphql nexus mongoose node-cron jest typescript ts-no
 ### Code Review & Optimization
 
 - [ ] Review the code and optimize for readability, maintainability, and performance.
-- [ ] Document any assumptions made, decisions taken, and the project setup.
 
 
 
