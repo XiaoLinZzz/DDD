@@ -2,7 +2,13 @@
 
 This repo is about a demo of backend application using DDD (Domain Driven Design) approach.
 
+## One-line Installation
 
+You need to install neccessary packages for the project. You can do it by running the following command:
+
+```sh
+npm install apollo-server graphql nexus mongoose node-cron jest typescript ts-node ts-jest @types/node @types/jest @types/mongoose @types/graphql
+```
 
 ## To-do list
 ### Project Setup
