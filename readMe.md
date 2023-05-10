@@ -6,6 +6,17 @@
 
 <!-- This repo is about a demo of backend application using DDD (Domain Driven Design) approach. -->
 
+## Packages
+
+[![apollo-server](https://img.shields.io/badge/apollo--server-311C87?style=for-the-badge&logo=apollo-graphql&logoColor=white)](https://www.npmjs.com/package/apollo-server)
+[![graphql](https://img.shields.io/badge/graphql-E434AA?style=for-the-badge&logo=graphql&logoColor=white)](https://www.npmjs.com/package/graphql)
+[![nexus](https://img.shields.io/badge/nexus-5D2E8C?style=for-the-badge&logo=nexus&logoColor=white)](https://www.npmjs.com/package/nexus)
+[![mongoose](https://img.shields.io/badge/mongoose-880000?style=for-the-badge&logo=mongoose&logoColor=white)](https://www.npmjs.com/package/mongoose)
+[![node-cron](https://img.shields.io/badge/node--cron-89CFF0?style=for-the-badge&logo=node-cron&logoColor=white)](https://www.npmjs.com/package/node-cron)
+[![jest](https://img.shields.io/badge/jest-C21325?style=for-the-badge&logo=jest&logoColor=white)](https://www.npmjs.com/package/jest)
+[![typescript](https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.npmjs.com/package/typescript)
+
+
 ## One-line Installation
 
 You need to install neccessary packages for the project. You can do it by running the following command:
