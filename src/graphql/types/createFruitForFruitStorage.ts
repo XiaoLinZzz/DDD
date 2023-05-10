@@ -4,10 +4,10 @@ export const createFruitForFruitStorage = mutationField('createFruitForFruitStor
     type: 'Fruit',
     args: {
         name: nonNull(stringArg()),
-        amount: nonNull(intArg()),
+        description: nonNull(stringArg()),
         limit: nonNull(intArg()),
     },
-    resolve: async (_, { name, amount, limit }, ctx) => {
-        return await ctx.fruitStorageService.createFruit(name, amount, limit)
+    resolve: async (_, { name, description, limit }, ctx) => {
+        return await ctx.fruitStorageService.createFruit(name, description, limit)
     },
 })

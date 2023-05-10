@@ -4,6 +4,7 @@ import { FruitRepository } from "./domain/repositories/FruitRepository";
 import { MongooseFruitRepository } from "./infrastructure/database/mongoose/repositories/MongooseFruitRepository";
 import { FruitFactory } from "./domain/factories/FruitFactory";
 import { UniqueFruitNameService } from "./domain/services/UniqueFruitNameService";
+import { FruitStorageService } from "./domain/services/FruitStorageService";
 
 // Set up your database connection here (e.g., with Mongoose)
 
@@ -14,9 +15,11 @@ const uniqueFruitNameService = new UniqueFruitNameService(fruitRepository);
 const server = new ApolloServer({
   schema,
   context: {
-    fruitRepository,
-    fruitFactory,
-    uniqueFruitNameService,
+    fruitStorageService: new FruitStorageService(
+      fruitRepository,
+      uniqueFruitNameService,
+      fruitFactory
+    ),
   },
 });
 

@@ -26,6 +26,13 @@ export class Fruit {
       this.limit = limit;
     }
 
+    store(amount: number): void {
+      if (this.amount + amount > this.limit) {
+        throw new Error("Exceeds limit");
+      }
+      this.amount += amount;
+    }
+
     emitCreatedEvent(): void {
       fruitEventEmitter.emit("fruitCreated", this);
     }

@@ -27,7 +27,7 @@ This repo is about a demo of backend application using DDD (Domain Driven Design
 
 ### Domain Events
 
-- [ ] Create a mechanism to emit domain events with guaranteed at least once delivery.
+- [x] Create a mechanism to emit domain events with guaranteed at least once delivery.
 
 ### Testing
 
@@ -88,7 +88,7 @@ src/
 ### Details
 1. `src/`: The root folder of the source code.
 2. `domain/`: This folder contains the domain layer of the application, which represents the core business logic.
-    - `entities/`: Contains the entity classes, like Fruit.ts, which define the main building blocks of the domain model.
+    - `entities/`: Contains the entity classes, like `Fruit.ts`, which define the main building blocks of the domain model.
     - `valueObjects/`: Contains value objects, like `Description.ts`, which are immutable and represent specific aspects of the domain model.
     - `factories/`: Contains factory classes, like `FruitFactory.ts`, which are responsible for creating instances of entities or value objects.
     - `repositories/`: Contains repository interfaces, like `FruitRepository.ts`, which define the contracts for data access and storage.
