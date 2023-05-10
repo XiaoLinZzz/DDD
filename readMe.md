@@ -5,8 +5,8 @@ This repo is about a demo of backend application using DDD (Domain Driven Design
 ## To-do list
 ### Project Setup
 
-- [ ] Set up a new Node.js project with TypeScript, Mongoose, Jest, and Nexus.
-- [ ] Configure linters, precommit hooks, and other development tools.
+- [x] Set up a new Node.js project with TypeScript, Mongoose, Jest, and Nexus.
+- [x] Configure linters, precommit hooks, and other development tools.
 
 ### Domain Design
 
@@ -44,7 +44,7 @@ This repo is about a demo of backend application using DDD (Domain Driven Design
 
 
 ## Structure
-the structure of the project is as follows:
+The structure of the project is as follows:
 
 ```css
 src/
@@ -61,9 +61,19 @@ src/
 │   │   └── UniqueFruitNameService.ts
 │   └── events/
 │       └── FruitDomainEventEmitter.ts
+|
 ├── graphql/
+│   ├── types/
+│   │   ├── FruitInput.ts
+│   │   ├── storeFruitToFruitStorage.ts
+│   │   ├── removeFruitFromFruitStorage.ts
+│   │   ├── createFruitForFruitStorage.ts
+│   │   ├── updateFruitForFruitStorage.ts
+│   │   ├── deleteFruitFromFruitStorage.ts
+│   │   └── findFruit.ts
 │   ├── context.ts
 │   └── schema.ts
+|
 └── infrastructure/
     ├── database/
     │   └── mongoose/

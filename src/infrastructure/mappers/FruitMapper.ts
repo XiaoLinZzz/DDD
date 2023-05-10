@@ -4,20 +4,20 @@ import { FruitBaseDocument, FruitModel } from "../database/mongoose/models/Fruit
 
 export class FruitMapper {
   public static toDomain(fruitDocument: FruitBaseDocument): Fruit {
-    return new Fruit({
-      _id: fruitDocument._id,
-      name: fruitDocument.name,
-      description: new Description(fruitDocument.description),
-      limit: fruitDocument.limit,
-      amount: fruitDocument.amount,
-    });
+    return new Fruit(
+      fruitDocument._id,
+      fruitDocument.name,
+      fruitDocument.description,
+      fruitDocument.limit,
+      fruitDocument.amount
+    );
   }
 
   public static toPersistence(fruit: Fruit): FruitBaseDocument {
     const fruitDoc = new FruitModel({
       _id: fruit.id,
       name: fruit.name,
-      description: fruit.description.value,
+      description: fruit.description,
       limit: fruit.limit,
       amount: fruit.amount,
     });

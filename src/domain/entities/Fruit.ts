@@ -1,3 +1,6 @@
+import { fruitEventEmitter } from "../events/FruitDomainEventEmitter";
+import { Description } from "../valueObjects/Description";
+
 export class Fruit {
     constructor(
       public id: string,
@@ -21,6 +24,18 @@ export class Fruit {
     update(description: string, limit: number): void {
       this.description = description;
       this.limit = limit;
+    }
+
+    emitCreatedEvent(): void {
+      fruitEventEmitter.emit("fruitCreated", this);
+    }
+
+    emitUpdatedEvent(): void {
+      fruitEventEmitter.emit("fruitUpdated", this);
+    }
+
+    emitDeletedEvent(): void {
+      fruitEventEmitter.emit("fruitDeleted", this);
     }
 }
   

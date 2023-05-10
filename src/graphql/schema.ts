@@ -1,43 +1,11 @@
-import { makeSchema, objectType, nonNull } from "nexus";
-import { Fruit } from "../domain/entities/Fruit";
-import { Context } from "./context";
-
-const FruitType = objectType({
-  name: "Fruit",
-  definition(t) {
-    t.string("id");
-    t.string("name");
-    t.string("description");
-    t.int("limit");
-    t.int("amount");
-  },
-});
-
-const Query = objectType({
-  name: "Query",
-  definition(t) {
-    t.field("findFruit", {
-      type: "Fruit",
-      args: {
-        name: nonNull("String"),
-      },
-      resolve: async (_parent, { name }, ctx: Context) => {
-        return await ctx.fruitRepository.findByName(name);
-      },
-    });
-  },
-});
-
-// Add your Mutation and other object types here.
+import { makeSchema } from '@nexus/schema'
+import * as path from 'path'
+import * as types from './types'
 
 export const schema = makeSchema({
-  types: [FruitType, Query], // Add Mutation and other object types here.
-  contextType: {
-    module: require.resolve("./context"),
-    export: "Context",
-  },
+  types,
   outputs: {
-    schema: __dirname + "/../generated/schema.graphql",
-    typegen: __dirname + "/../generated/nexus.ts",
+    typegen: path.join(__dirname, 'generated/nexus-typegen.ts'),
+    schema: path.join(__dirname, 'generated/schema.graphql'),
   },
-});
+})
