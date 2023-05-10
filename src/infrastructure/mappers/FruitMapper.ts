@@ -7,7 +7,7 @@ export class FruitMapper {
     return new Fruit(
       fruitDocument._id,
       fruitDocument.name,
-      fruitDocument.description,
+      new Description(fruitDocument.description),
       fruitDocument.limit,
       fruitDocument.amount
     );

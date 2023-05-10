@@ -5,7 +5,7 @@ export class Fruit {
     constructor(
       public id: string,
       public name: string,
-      public description: string,
+      public description: Description,
       public limit: number,
       public amount: number = 0
     ) {}
@@ -22,7 +22,7 @@ export class Fruit {
     }
   
     update(description: string, limit: number): void {
-      this.description = description;
+      this.description = new Description(description);
       this.limit = limit;
     }
 
