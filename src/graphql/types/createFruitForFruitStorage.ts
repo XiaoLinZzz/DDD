@@ -8,6 +8,13 @@ export const createFruitForFruitStorage = mutationField('createFruitForFruitStor
         limit: nonNull(intArg()),
     },
     resolve: async (_, { name, description, limit }, ctx) => {
-        return await ctx.fruitStorageService.createFruit(name, description, limit)
+        const apple =  await ctx.fruitStorageService.createFruit(name, description, limit)
+        return {
+            id: apple.id,
+            name: apple.name,
+            description: apple.description.getValue(),
+            limit: apple.limit,
+            amount: apple.amount,
+        }
     },
 })

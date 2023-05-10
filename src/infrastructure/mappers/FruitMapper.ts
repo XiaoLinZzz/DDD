@@ -17,7 +17,7 @@ export class FruitMapper {
     const fruitDoc = new FruitModel({
       _id: fruit.id,
       name: fruit.name,
-      description: fruit.description,
+      description: fruit.description.getValue(),
       limit: fruit.limit,
       amount: fruit.amount,
     });

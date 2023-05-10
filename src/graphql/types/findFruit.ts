@@ -6,6 +6,13 @@ export const findFruit = queryField('findFruit', {
         name: nonNull(stringArg()),
     },
     resolve: async (_, { name }, ctx) => {
-        return await ctx.fruitStorageService.findFruit(name)
+        const fruit = await ctx.fruitStorageService.findFruit(name)
+        return {
+            id: fruit.id,
+            name: fruit.name,
+            description: fruit.getDescription(),
+            limit: fruit.limit,
+            amount: fruit.amount,
+        }
     },
 })

@@ -7,6 +7,13 @@ export const deleteFruitFromFruitStorage = mutationField('deleteFruitFromFruitSt
         forceDelete: nonNull(booleanArg()),
     },
     resolve: async (_, { name, forceDelete }, ctx) => {
-        return await ctx.fruitStorageService.removeFruit(name, forceDelete)
+        const fruit =  await ctx.fruitStorageService.deleteFruit(name, forceDelete)
+        return {
+            id: fruit.id,
+            name: fruit.name,
+            description: fruit.description.getValue(),
+            limit: fruit.limit,
+            amount: fruit.amount,
+        }
     }
 })

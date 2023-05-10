@@ -13,14 +13,18 @@ export class Fruit {
     add(amount: number): void {
       this.amount += amount;
     }
-  
+    
     remove(amount: number): void {
-      if (this.amount < amount) {
-        throw new Error("Insufficient stock");
+      if (this.amount - amount < 0) {
+        throw new Error("Exceeds limit");
       }
       this.amount -= amount;
     }
-  
+    
+    getDescription(): string {
+      return this.description.getValue();
+    }
+
     update(description: string, limit: number): void {
       this.description = new Description(description);
       this.limit = limit;

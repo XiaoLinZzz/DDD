@@ -8,7 +8,14 @@ export const updateFruitForFruitStorage = mutationField('updateFruitForFruitStor
         limit: nonNull(intArg()),
     },
     resolve: async (_, { name, description, limit }, ctx) => {
-        return await ctx.fruitStorageService.updateFruit(name, description, limit)
+        const fruit =  await ctx.fruitStorageService.updateFruit(name, description, limit)
+        return {
+            id: fruit.id,
+            name: fruit.name,
+            description: fruit.description.getValue(),
+            limit: fruit.limit,
+            amount: fruit.amount,
+        }
     }
 })
 

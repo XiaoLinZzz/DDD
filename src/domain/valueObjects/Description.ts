@@ -14,5 +14,4 @@ export class Description {
   getValue(): string {
     return this.value;
   }
-
 }

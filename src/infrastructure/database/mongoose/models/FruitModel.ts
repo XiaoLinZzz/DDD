@@ -1,4 +1,5 @@
 import mongoose, { Document, Schema } from "mongoose";
+import { Description } from "../../../../domain/valueObjects/Description";
 
 export interface FruitBaseDocument extends Document {
   _id: string;

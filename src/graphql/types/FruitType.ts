@@ -1,5 +1,5 @@
 // types/FruitType.ts
-import { objectType } from '@nexus/schema';
+import { objectType } from '@nexus/schema'
 
 export const FruitType = objectType({
   name: 'Fruit',
