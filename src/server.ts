@@ -7,6 +7,8 @@ import { UniqueFruitNameService } from "./domain/services/UniqueFruitNameService
 import { FruitStorageService } from "./domain/services/FruitStorageService";
 
 // Set up your database connection here (e.g., with Mongoose)
+const mongoose = require('mongoose');
+
 
 const fruitRepository: FruitRepository = new MongooseFruitRepository(); // Make sure you pass the Mongoose model to the repository
 const fruitFactory = new FruitFactory();
