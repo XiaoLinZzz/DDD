@@ -1,6 +1,6 @@
 # Fruit Storage System Demo
 
-[![Notion](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=Notion&logoColor=white)](https://www.notion.so/skandio/DDD-Task-681ae75a799b4bd392c658f8eeedc595?pvs=4)
+The details is available in the following Notion page: [![Notion](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=Notion&logoColor=white)](https://www.notion.so/skandio/DDD-Task-681ae75a799b4bd392c658f8eeedc595?pvs=4)
 
 
 
