@@ -1,6 +1,11 @@
 # Fruit Storage System Demo
 
-This repo is about a demo of backend application using DDD (Domain Driven Design) approach.
+<div style="display: flex; flex-direction: row; gap: 20px;">
+    <span onclick="window.open('https://xiaolinzzz.notion.site/DDD-Task-65826d4c8c25495abdc3fb90ef3df6ae', '_blank')" style="cursor: pointer;"><img src="https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=Notion&logoColor=white" alt="Notion"></span>
+</div>
+
+
+<!-- This repo is about a demo of backend application using DDD (Domain Driven Design) approach. -->
 
 ## One-line Installation
 
