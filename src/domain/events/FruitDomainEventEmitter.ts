@@ -19,6 +19,10 @@ fruitEventEmitter.on("fruitDeleted", (fruit: Fruit) => {
   console.log(`A fruit has been deleted: ${fruit.name}`);
 });
 
+// fruitEventEmitter.on("fruitStored", (fruit: Fruit) => {
+//   console.log(`A fruit has been stored: ${fruit.name} with amount ${fruit.amount}`);
+// });
+
 // The transactional outbox pattern with node-cron to guarantee at least once delivery
 const outbox = new Map<string, { eventName: string; fruit: Fruit }>();
 

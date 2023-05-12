@@ -64,7 +64,10 @@ npm install apollo-server graphql nexus mongoose node-cron jest typescript ts-no
 - [ ] Review the code and optimize for readability, maintainability, and performance.
 
 
-
+## How to run?
+```
+npm start
+```
 
 
 ## Structure
@@ -84,6 +87,7 @@ src/
 │   │   └── FruitRepository.ts
 │   ├── services/
 |   |   ├── FruitStorageService.ts 
+│   |   |── FruitStorageService.test.ts
 │   │   └── UniqueFruitNameService.ts
 │   └── events/
 │       └── FruitDomainEventEmitter.ts

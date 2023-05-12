@@ -2,6 +2,7 @@ import { Fruit } from '../entities/Fruit';
 import { FruitFactory } from '../factories/FruitFactory';
 import { FruitRepository } from '../repositories/FruitRepository';
 import { UniqueFruitNameService } from './UniqueFruitNameService';
+import { publishEvent } from '../events/FruitDomainEventEmitter';
 
 export class FruitStorageService {
     constructor(
@@ -17,6 +18,9 @@ export class FruitStorageService {
         }
         const fruit = this.fruitFactory.create(name, description, limit);
         await this.fruitRepository.save(fruit);
+
+        publishEvent(fruit.id, 'fruitCreated', fruit);
+
         return fruit;
     }
 
@@ -32,6 +36,8 @@ export class FruitStorageService {
         if (!forceDelete && fruit.amount > 0) {
             throw new Error('Fruit has stock. Cannot delete');
         }
+
+        publishEvent(fruit.id, 'fruitDeleted', fruit);
         await this.fruitRepository.delete(fruit.id);
     }
 
@@ -42,6 +48,7 @@ export class FruitStorageService {
         }
         fruit.remove(amount);
         await this.fruitRepository.save(fruit);
+
         return fruit;
     }
 
@@ -62,6 +69,8 @@ export class FruitStorageService {
         }
         fruit.update(description, limit);
         await this.fruitRepository.save(fruit);
+
+        publishEvent(fruit.id, 'fruitUpdated', fruit);
         return fruit;
     }
 }
